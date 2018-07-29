@@ -94,7 +94,6 @@ mod tests {
         ];
 
         for test in tests {
-            println!("test input «{}»", test.input);
             // Hash through high-level API, check hex encoding/decoding
             let hash = Sha256dHash::hash(&test.input.as_bytes());
             assert_eq!(hash, Sha256dHash::from_hex(test.output_str).expect("parse hex"));
