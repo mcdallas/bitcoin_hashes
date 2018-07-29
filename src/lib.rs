@@ -35,6 +35,7 @@ extern crate byteorder;
 #[macro_use] mod util;
 pub mod error;
 pub mod hex;
+pub mod hmac;
 pub mod ripemd160;
 pub mod sha1;
 pub mod sha256;
@@ -42,6 +43,7 @@ pub mod sha256d;
 
 use std::{fmt, io, ops};
 
+pub use hmac::{Hmac, HmacEngine};
 pub use error::Error;
 
 /// Trait which applies to hashes of all types
