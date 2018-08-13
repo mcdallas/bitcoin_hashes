@@ -17,3 +17,11 @@ unstable = []  # for benchmarking
 [dependencies]
 byteorder = "1.2"
 
+## Library should never panic, but has some panic paths because of io::Write.
+## Try to minimize performance/compilation hit of these unused paths by making them aborts.
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
